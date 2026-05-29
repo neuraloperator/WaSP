@@ -1,0 +1,14 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.10  # Use the latest version available
+    hooks:
+      - id: ruff-check
+        args: [--fix]
+        files: ^wasp
+      - id: ruff-format
+        files: ^wasp
+
+  - repo: https://github.com/MarcoGorelli/cython-lint
+    rev: v0.16.2  # Use the latest version
+    hooks:
+      - id: cython-lint

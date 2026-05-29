@@ -1,0 +1,33 @@
+[build-system]
+build-backend = "flit_core.buildapi"
+requires = ["flit_core >=3.2,<4"]
+
+[project]
+name = "wasp"
+description = "Wasserstein Data Synthesis Pipeline"
+version = "0.0.0"
+authors = [
+    { name = "Ryan Liu", email = "ryanliu@caltech.edu" }
+]
+dependencies = [
+    "neuraloperator",
+    "tqdm",
+    "pykeops",
+    "submitit",
+    "pre-commit",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["F", "E", "W", "I", "D"]
+ignore = ["E741", "D417", "D401", "D400", "D300", "D212", "D205", "D203", "D200", "D105", "D100", "D101", "D103", "D107", "E712", "E701", "E741"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["D102"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
